@@ -1,14 +1,15 @@
 body {
   font-family: cursive;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/209/original/rain.jpg?1671214527");
   background-size: cover;
   height: 100vh;
   margin: 0 auto;
 }
 .container {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/061/533/original/238683.jpg?1672930169");
+  background-size: cover;
   display: block;
-  margin: 200px auto;
-  background-color: whitesmoke;
+  margin: 0 auto;
+
   max-width: 900px;
   padding: 30px;
   border-radius: 5px;
@@ -24,11 +25,12 @@ body {
 }
 
 .col .h-100 {
+  background-color: #fbf9f0ff;
   font-size: 20px;
   transition: all 200ms ease-in-out;
 }
 .col .h-100:hover {
-  background-color: #bbbfca;
+  background-color: #c1bbaaff;
 }
 .list-group {
   display: block;
@@ -36,17 +38,19 @@ body {
   padding: 20px;
 }
 .list-group-item {
+  background-color: #fbf9f0ff;
   transition: all 200ms ease-in-out;
 }
 .list-group-item:hover {
   transform: scale(1.15);
+  background-color: #c1bbaaff;
 }
 .col-3 {
   max-width: 10px auto;
   padding: 20px;
   margin: 20px auto;
   border-radius: 5px;
-  background-color: rgba(211, 211, 211, 0.733);
+  background-color: #e6eae5ff;
   text-align: left;
 }
 .temperature {
@@ -97,4 +101,9 @@ body {
   padding: 30px;
   text-align: left;
   font-size: 20px;
+}
+.source-link {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
 }
