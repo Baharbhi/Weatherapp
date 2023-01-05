@@ -1,0 +1,100 @@
+body {
+  font-family: cursive;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/209/original/rain.jpg?1671214527");
+  background-size: cover;
+  height: 100vh;
+  margin: 0 auto;
+}
+.container {
+  display: block;
+  margin: 200px auto;
+  background-color: whitesmoke;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 15px 15px #1e1e1e;
+  opacity: 0.9;
+}
+.city {
+  text-align: left;
+  font-size: 30px;
+}
+.row {
+  margin: 0 auto;
+}
+
+.col .h-100 {
+  font-size: 20px;
+  transition: all 200ms ease-in-out;
+}
+.col .h-100:hover {
+  background-color: #bbbfca;
+}
+.list-group {
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+.list-group-item {
+  transition: all 200ms ease-in-out;
+}
+.list-group-item:hover {
+  transform: scale(1.15);
+}
+.col-3 {
+  max-width: 10px auto;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: rgba(211, 211, 211, 0.733);
+  text-align: left;
+}
+.temperature {
+  margin: 0 auto;
+  top: -200px;
+  font-size: 42px;
+}
+.unit {
+  position: relative;
+  top: -30px;
+  left: 10px;
+  font-size: 24px;
+}
+.weather-icon {
+  position: relative;
+  top: -5px;
+  left: 20px;
+  font-size: 50px;
+}
+
+.humWind {
+  margin-top: 10px;
+}
+.col-6 {
+  padding: 0;
+}
+.humAndWind {
+  font-size: 14px;
+}
+.current-weather {
+  margin-top: 25px;
+}
+.search-icon {
+  font-size: 25px;
+
+  position: relative;
+  right: -800px;
+  top: 35px;
+  transition: all 200ms ease-in-out;
+}
+.search-icon:hover {
+  transform: scale(1.15);
+}
+.location {
+  list-style: none;
+  display: block;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: left;
+  font-size: 20px;
+}
