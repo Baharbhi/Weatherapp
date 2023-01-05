@@ -1,8 +1,7 @@
 body {
   font-family: cursive;
-  background-size: cover;
   height: 100vh;
-  margin: 0 auto;
+  margin-top: 200px;
 }
 .container {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/061/533/original/238683.jpg?1672930169");
