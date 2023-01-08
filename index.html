@@ -35,7 +35,7 @@
       <div class="text-center">
         <div class="row justify-content-start">
           <div class="col-3">
-            <span class="temperature" id="temp-input">6</span>
+            <span class="temperature" id="temp"></span>
             <span class="unit"> <a id="cel-input">°C</a></span>
             <!-- <a href="#" id="far-input">°F</a></span
             > -->
@@ -44,12 +44,17 @@
             <div class="humAndWind">
               <div class="row humWind">
                 <div class="col-6">Humidity:</div>
-                <div class="col-6 hum" id="hum-input"></div>
+                <div class="col-6 hum" id="hum"></div>
 
                 <div class="w-100"></div>
 
                 <div class="col-6">Wind:</div>
-                <div class="col-6" id="wind-input"></div>
+                <div class="col-6" id="wind"></div>
+
+                <div class="w-100"></div>
+
+                <div class="col-6">Discription:</div>
+                <div class="col-6" id="descripntion"></div>
               </div>
             </div>
             <button class="current-weather" id="current-weather">
@@ -59,9 +64,9 @@
 
           <div class="col-4">
             <ul class="location">
-              <li id="city-input">...</li>
-              <li id="time-input"></li>
-              <li id="week-day"></li>
+              <li id="city"></li>
+              <li id="time"></li>
+              <li id="weekday"></li>
               <li id="date-input"></li>
             </ul>
           </div>
