@@ -43,14 +43,13 @@ body {
   transform: scale(1.15);
   background-color: #c1bbaaff;
 }
-.col-3 {
-  padding: 20px;
+.mainTemp {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 .weather-icon {
   position: relative;
-  left: -25px;
+  left: -35px;
   top: 10px;
 }
 .temperature {
@@ -62,11 +61,13 @@ body {
 }
 .unit {
   position: relative;
-  top: -70px;
-  left: 135px;
+  top: -20px;
+  left: -40px;
 }
 .humWind {
   margin-top: 10px;
+  padding-left: 20px;
+  text-align: left;
 }
 .col-6 {
   padding: 0;

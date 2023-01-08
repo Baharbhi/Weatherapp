@@ -64,7 +64,7 @@ function displayUnit(response) {
 }
 
 let apiKey = "959f5f0ba0ac8dfc4839304323276dfa";
-let city = "Mashhad";
+let city = "Denali";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayUnit);
