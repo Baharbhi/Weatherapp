@@ -1,6 +1,8 @@
 body {
   background-color: #e6eae5ff;
-  font-family: cursive;
+  font-family: "Chivo Mono", monospace;
+  font-family: "Raleway", sans-serif;
+
   height: 75vh;
   margin-top: 100px;
 }
@@ -18,9 +20,6 @@ body {
 .city {
   text-align: left;
   font-size: 30px;
-}
-.row {
-  margin: 0 auto;
 }
 
 .col .h-100 {
@@ -45,31 +44,27 @@ body {
   background-color: #c1bbaaff;
 }
 .col-3 {
-  max-width: 10px auto;
   padding: 20px;
-  margin: 20px auto;
-  border-radius: 5px;
-  background-color: #e6eae5ff;
-  text-align: left;
-}
-.temperature {
   margin: 0 auto;
-  top: -200px;
-  font-size: 42px;
-}
-.unit {
-  position: relative;
-  top: -30px;
-  left: 10px;
-  font-size: 24px;
+  text-align: left;
 }
 .weather-icon {
   position: relative;
-  top: -5px;
-  left: 20px;
-  font-size: 50px;
+  left: -25px;
+  top: 10px;
 }
-
+.temperature {
+  position: relative;
+  top: 30px;
+  left: -35px;
+  font-size: 64px;
+  font-weight: 400;
+}
+.unit {
+  position: relative;
+  top: -70px;
+  left: 135px;
+}
 .humWind {
   margin-top: 10px;
 }
