@@ -103,6 +103,10 @@ body {
   text-align: center;
 }
 
+#celsius-link {
+  text-decoration: none;
+}
+
 .active {
   color: #34383b;
   cursor: default;
