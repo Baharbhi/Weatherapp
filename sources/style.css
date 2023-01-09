@@ -102,3 +102,17 @@ body {
   margin: 20px auto;
   text-align: center;
 }
+
+.active {
+  color: #34383b;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+#fahr-link {
+  text-decoration: none;
+}

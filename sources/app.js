@@ -51,7 +51,8 @@ function displayUnit(response) {
   let descripntionElement = document.querySelector("#descripntion");
   let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  tempElement.innerHTML = Math.round(celsiusTemp);
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   cityElemet.innerHTML = response.data.name;
@@ -63,8 +64,43 @@ function displayUnit(response) {
   );
 }
 
-let apiKey = "959f5f0ba0ac8dfc4839304323276dfa";
-let city = "Denali";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "959f5f0ba0ac8dfc4839304323276dfa";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayUnit);
+}
 
-axios.get(apiUrl).then(displayUnit);
+function submitCity(event) {
+  event.preventDefault();
+  let cityNameElement = document.querySelector("#exampleDataList");
+  search(cityNameElement.value);
+}
+function showFahrTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  celsiusLink.classList.remove("active");
+  fahrLink.classList.add("active");
+  let fahrTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrTemp);
+}
+
+function showcelsiusTemp(event) {
+  event.preventDefault();
+  fahrLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let searchElement = document.querySelector("#clickMe");
+searchElement.addEventListener("click", submitCity);
+
+let fahrLink = document.querySelector("#fahr-link");
+fahrLink.addEventListener("click", showFahrTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showcelsiusTemp);
+
+search("Mashhad");
