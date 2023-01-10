@@ -42,28 +42,52 @@ function formatDate(timestamp) {
   return `${hours}:${minute} <br> ${day} <br> ${month} ${today} ${year}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
    
      <div class="col">
        <div class="card h-100">
          <div class="card-body">
-           <h5 class="card-title">10°C</h5>
-           <p class="card-text">🌥️</p>
+           <span class="card-title">${Math.round(
+             forecastDay.temperature.maximum
+           )}°</span>
+           <span class="card-title-max">${Math.round(
+             forecastDay.temperature.minimum
+           )}°</span>
+           <p class="card-text"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+             forecastDay.condition.icon
+           }.png"></p>
          </div>
          <div class="card-footer">
-           <small class="text-muted">${day}</small>
+           <small class="text-muted">${formatDay(forecastDay.time)}</small>
          </div>
        </div>
      </div>`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
