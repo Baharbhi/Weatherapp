@@ -42,6 +42,31 @@ function formatDate(timestamp) {
   return `${hours}:${minute} <br> ${day} <br> ${month} ${today} ${year}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+   
+     <div class="col">
+       <div class="card h-100">
+         <div class="card-body">
+           <h5 class="card-title">10°C</h5>
+           <p class="card-text">🌥️</p>
+         </div>
+         <div class="card-footer">
+           <small class="text-muted">${day}</small>
+         </div>
+       </div>
+     </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayUnit(response) {
   console.log(response.data);
   let tempElement = document.querySelector("#temp");
@@ -104,3 +129,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showcelsiusTemp);
 
 search("Mashhad");
+displayForecast();
