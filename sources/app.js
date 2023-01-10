@@ -42,7 +42,8 @@ function formatDate(timestamp) {
   return `${hours}:${minute} <br> ${day} <br> ${month} ${today} ${year}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -67,6 +68,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "959f5f0ba0ac8dfc4839304323276dfa";
+  let apiUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayUnit(response) {
   console.log(response.data);
   let tempElement = document.querySelector("#temp");
@@ -87,6 +96,7 @@ function displayUnit(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -129,4 +139,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showcelsiusTemp);
 
 search("Mashhad");
-displayForecast();
