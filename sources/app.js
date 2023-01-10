@@ -80,7 +80,7 @@ function displayForecast(response) {
            )}°</span>
            <p class="card-text"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
              forecastDay.condition.icon
-           }.png"></p>
+           }.png" width=52></p>
          </div>
          <div class="card-footer">
            <small class="text-muted">${formatDay(forecastDay.time)}</small>
@@ -112,7 +112,7 @@ function displayUnit(response) {
   celsiusTemp = response.data.temperature.current;
   tempElement.innerHTML = Math.round(celsiusTemp);
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  windElement.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)}m/h`;
   cityElemet.innerHTML = response.data.city;
   descripntionElement.innerHTML = response.data.condition.description;
   timeElement.innerHTML = formatDate(response.data.time * 1000);
