@@ -135,7 +135,4 @@ function submitCity(event) {
   search(cityNameElement.value);
 }
 
-let searchElement = document.querySelector("#clickMe");
-searchElement.addEventListener("click", submitCity);
-
 search("Mashhad");

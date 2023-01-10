@@ -78,17 +78,7 @@ body {
 .current-weather {
   margin-top: 25px;
 }
-.search-icon {
-  font-size: 25px;
 
-  position: relative;
-  right: -800px;
-  top: 35px;
-  transition: all 200ms ease-in-out;
-}
-.search-icon:hover {
-  transform: scale(1.15);
-}
 .location {
   list-style: none;
   display: block;
