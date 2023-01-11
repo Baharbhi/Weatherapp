@@ -96,7 +96,6 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "f97cbea0f5e987ebb494t7fe128o5431";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
-
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -106,11 +105,11 @@ function displayUnit(response) {
   let humidityElement = document.querySelector("#hum");
   let windElement = document.querySelector("#wind");
   let cityElemet = document.querySelector("#city");
-  let descripntionElement = document.querySelector("#descripntion");
+  let descripntionElement = document.querySelector("#description");
   let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
-  celsiusTemp = response.data.temperature.current;
-  tempElement.innerHTML = Math.round(celsiusTemp);
+  celisius = response.data.temperature.current;
+  tempElement.innerHTML = Math.round(celisius);
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)}m/h`;
   cityElemet.innerHTML = response.data.city;
@@ -135,7 +134,42 @@ function submitCity(event) {
   search(cityNameElement.value);
 }
 
-let searchElement = document.querySelector("#click-me");
+let searchElement = document.querySelector("#search-city");
 searchElement.addEventListener("click", submitCity);
 
-search("Mashhad");
+function displayUnitOfCurrentPosition(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let temp = document.querySelector("#temp");
+  let humidity = response.data.main.humidity;
+  let hum = document.querySelector("#hum");
+  let wind = response.data.wind.speed;
+  let windInput = document.querySelector("#wind");
+  let currentCity = document.querySelector("#city");
+  let descripntionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
+  temp.innerHTML = `${temperature}`;
+  hum.innerHTML = `${humidity} %`;
+  windInput.innerHTML = `${wind} m/h`;
+  currentCity.innerHTML = `${response.data.name}`;
+  descripntionElement.innerHTML = `${response.data.weather[0].description}`;
+  iconElement.setAttribute(
+    "src",
+    ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
+function currentLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(displayUnitOfCurrentPosition);
+}
+function geoLoc() {
+  navigator.geolocation.getCurrentPosition(currentLocation);
+}
+
+let currentElement = document.querySelector("#location");
+currentElement.addEventListener("click", geoLoc);
+
+search("New york");
