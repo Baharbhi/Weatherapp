@@ -131,8 +131,11 @@ function search(city) {
 
 function submitCity(event) {
   event.preventDefault();
-  let cityNameElement = document.querySelector("#exampleDataList");
+  let cityNameElement = document.querySelector("#search-form");
   search(cityNameElement.value);
 }
+
+let searchElement = document.querySelector("#click-me");
+searchElement.addEventListener("click", submitCity);
 
 search("Mashhad");

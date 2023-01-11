@@ -78,6 +78,14 @@ body {
 .current-weather {
   margin-top: 25px;
 }
+.search-icon {
+  font-size: 25px;
+  margin-top: 5px;
+}
+.location-icon {
+  font-size: 25px;
+  margin-top: 5px;
+}
 
 .location {
   list-style: none;
